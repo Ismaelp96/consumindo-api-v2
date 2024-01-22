@@ -50,3 +50,16 @@ function filterSearch() {
     video.style.display = 'block';
   }
 }
+
+const buttonCategory = document.querySelectorAll('.superior__item');
+
+buttonCategory.forEach((button) => {
+  let nameCategory = button.getAttribute('name');
+  button.addEventListener('click', () => filterCategory(nameCategory));
+});
+
+function filterCategory(filter) {
+  const videos = document.querySelectorAll('.videos__item');
+  for (let video of videos) {
+  }
+}
