@@ -15,6 +15,7 @@ async function searchAndShowVideos() {
                           <img class="img-canal" alt="Logo do canal" src="${video.imagem}"/>
                           <h3 class="titulo-video">${video.titulo}</h3>
                           <p class="titulo-canal">${video.descricao}</p>
+                          <p class="categoria" hidden>${video.categoria}</p>
                       </div>
                   </li>
               `;
@@ -61,5 +62,13 @@ buttonCategory.forEach((button) => {
 function filterCategory(filter) {
   const videos = document.querySelectorAll('.videos__item');
   for (let video of videos) {
+    let category = video.querySelector('.categoria').textContent.toLowerCase();
+    let valueFilter = filter.toLowerCase();
+
+    if (!category.includes(valueFilter) && valueFilter != 'tudo') {
+      video.style.display = 'none';
+    } else {
+      video.style.display = 'block';
+    }
   }
 }
