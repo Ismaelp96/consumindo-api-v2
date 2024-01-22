@@ -25,3 +25,15 @@ async function searchAndShowVideos() {
 }
 
 searchAndShowVideos();
+
+const scrollSearch = document.querySelector('.pesquisar__input');
+
+scrollSearch.addEventListener('input', filterSearch);
+
+function filterSearch() {
+  const videos = document.querySelectorAll('.videos__item');
+
+  if (scrollSearch.value != '') {
+  } else {
+  }
+}
