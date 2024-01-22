@@ -34,6 +34,19 @@ function filterSearch() {
   const videos = document.querySelectorAll('.videos__item');
 
   if (scrollSearch.value != '') {
+    for (let video of videos) {
+      let title = video
+        .querySelector('.titulo-video')
+        .textContent.toLowerCase();
+      let valueFilter = scrollSearch.value.toLowerCase();
+
+      if (!title.includes(valueFilter)) {
+        video.style.display = 'none';
+      } else {
+        video.style.display = 'block';
+      }
+    }
   } else {
+    video.style.display = 'block';
   }
 }
